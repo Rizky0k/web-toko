@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react'
-import './Card.css'
-import  { getProductList } from '../api'
+import { useEffect } from "react";
+import "./Card.css";
+import { getProductList } from "../api";
 
-function Card() {
-  const [products, setProducts] = useState([])
-  
+function Card({ products, setProducts }) {
   useEffect(() => {
     getProductList().then((result) => {
-      setProducts(result)
-    })
-  }, [])
+      setProducts(result);
+    });
+  }, [setProducts]);
 
   return products.map((product, i) => {
     return (
@@ -19,8 +17,8 @@ function Card() {
           <p>{product.price}</p>
         </div>
       </div>
-    )
-  })
+    );
+  });
 }
 
-export default Card
+export default Card;
