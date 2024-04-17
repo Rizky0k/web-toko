@@ -1,5 +1,6 @@
 // import { searchProduct } from "../api";
 // import PropTypes from 'prop-types'
+import './Search.css'
 
 // eslint-disable-next-line react/prop-types
 const Search = ({ search }) => {

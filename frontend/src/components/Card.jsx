@@ -12,10 +12,12 @@ function Card({ products, setProducts }) {
   return products.map((product, i) => {
     return (
       <div className="card-container" key={i}>
-        <div className="card-content">
-          <h1>{product.name}</h1>
-          <p>{product.price}</p>
-        </div>
+          <span>{product.category}</span>
+          <h2>{product.name}</h2>
+          <p>Rp.{product.price}</p>
+          <hr/>
+          <h3>Note:</h3>
+          <p>{product.note}</p>
       </div>
     );
   });
