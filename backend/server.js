@@ -4,7 +4,7 @@ const Product = require('./model/product')
 const cors = require('cors')
 
 const app = express()
-const port = 3456
+const port = 3000
 
 app.use(cors())
 
