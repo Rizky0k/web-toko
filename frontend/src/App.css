@@ -1,15 +1,24 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
+#root {
+  /* max-width: 1280px;
+  margin: 0;
+  padding: 2rem; */
+  /* margin-left: auto;
+  margin-right: auto;
+  display: block; */
+  /* text-align: center; */
+}
 
 .wrapper {
-  background-color: bisque;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* max-width: fit-content;
+  align-items: center; 
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  */
+
 }
 
 @media (prefers-reduced-motion: no-preference) {

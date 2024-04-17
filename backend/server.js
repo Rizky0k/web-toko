@@ -15,9 +15,10 @@ app.get('/', async (req, res) => {
     res.send(product)
 })
 
-app.get('/:id', async(req, res) => {
-    const id = req.params['id']
-    const product = await Product.findById(id)
+app.get('/search', async(req, res) => {
+    const name = req.query.name
+    const regex = new RegExp(name, 'i')
+    const product = await Product.find({name: {$regex: regex}})
     res.send(product)
 })
 
