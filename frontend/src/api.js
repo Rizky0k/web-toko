@@ -1,6 +1,6 @@
 import axios from "axios";
-// const apiUrl = "https://glamorous-cyan-raincoat.cyclic.app/";
-const apiUrl = "http://localhost:3000/";
+const apiUrl = "https://glamorous-cyan-raincoat.cyclic.app/";
+// const apiUrl = "http://localhost:3000/";
 
 export const getProductList = async () => {
   const product = await axios.get(apiUrl);
