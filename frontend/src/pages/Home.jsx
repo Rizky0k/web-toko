@@ -8,14 +8,13 @@ function Home() {
   const [products, setProducts] = useState([]);
 
   const search = async (q) => {
-    if (q.length > 3) {
-      const query = await searchProduct(q);
-      setProducts(query.data);
-    }
+    const query = await searchProduct(q);
+    setProducts(query.results);
   };
   return (
     <>
       <Search search={search} />
+      <p>Jumlah Product terhitung : {products.length}</p>
       <div className="wrapper">
         <Card products={products} setProducts={setProducts} />
       </div>
