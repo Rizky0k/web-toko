@@ -2,12 +2,13 @@ import { useEffect } from "react";
 import "./Card.css";
 import { getProductList } from "../api";
 
-function Card({ products, setProducts }) {
+function Card({ products, setProducts, setTotalPages, currentPage, pageSize }) {
   useEffect(() => {
-    getProductList().then((result) => {
-      setProducts(result);
+    getProductList(currentPage, pageSize).then((result) => {
+      setProducts(result.results);
+      setTotalPages(result.totalPages);
     });
-  }, [setProducts]);
+  }, [setProducts, currentPage, setTotalPages, pageSize]);
 
   return products.map((product, i) => {
     const dateCreate = product.created_at.slice(0, 10);
