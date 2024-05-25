@@ -1,6 +1,6 @@
 import axios from "axios";
-// const apiUrl = "https://glamorous-cyan-raincoat.cyclic.app/";
-const apiUrl = "http://localhost:3000/product";
+const apiUrl = "https://web-toko-api.vercel.app/product";
+// const apiUrl = "http://localhost:3000/product";
 // const apiUrl = "http://localhost:3000/product/";
 
 export const getProductList = async (currentPage, pageSize) => {
