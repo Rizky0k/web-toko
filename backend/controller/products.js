@@ -7,8 +7,35 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const product = await Product.find();
-    res.send({ status: "success", results: product });
+    const page = parseInt(req.query.page || 1);
+    const pageSize = parseInt(req.query.pageSize || 100);
+    const sort = req.query.sort || "asc";
+
+    const name = escapeRegex(req.query.name || "");
+    const regex = new RegExp(name, "i");
+    // const product = await Product.find({ name: { $regex: regex } });
+    const product = await Product.find({ name: { $regex: regex } }).sort({
+      name: sort,
+    });
+
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = page * pageSize;
+
+    const paginatedProduct = product.slice(startIndex, endIndex);
+
+    const totalPages = Math.ceil(product.length / pageSize);
+
+    const totalProduct = product.length;
+    const totalProductInPage = paginatedProduct.length;
+
+    const response = {
+      status: "success",
+      totalPages,
+      totalProductInPage,
+      totalProduct,
+      results: paginatedProduct,
+    };
+    res.json(response).status(200);
   } catch (error) {
     res.send({ status: "failed", results: error.message });
   }

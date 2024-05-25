@@ -3,6 +3,20 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.dropdown {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-child {
+  display: none;
+}
+.show {
+  display: block;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
