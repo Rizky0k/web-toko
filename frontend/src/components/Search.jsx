@@ -13,6 +13,7 @@ const Search = ({ search }) => {
   return (
     <input
       placeholder="Masukkan pencarian"
+      className="searchInput"
       // onChange={({ target }) => search(target.value)}
       onChange={searchChange}
     />

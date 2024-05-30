@@ -2,6 +2,7 @@ const express = require("express");
 const Product = require("../model/product");
 
 const escapeRegex = require("../utils/exceptRegex");
+const auth = require("../utils/auth");
 
 const router = express.Router();
 
@@ -52,7 +53,7 @@ router.get("/search", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const { name, category, price, note } = req.body;
     const product = await Product.insertMany({
@@ -68,22 +69,36 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  const id = req.params["id"];
-  const { name, category, price, note } = req.body;
-  const product = await Product.updateOne(
-    {
-      _id: id,
-    },
-    {
-      $set: {
-        name: name,
-        category: category,
-        price: price,
-        note: note,
+  try {
+    const id = req.params["id"];
+    const { name, category, price, note } = req.body;
+    const product = await Product.updateOne(
+      {
+        _id: id,
       },
-    }
-  );
-  res.send(product);
+      {
+        $set: {
+          name: name,
+          category: category,
+          price: price,
+          note: note,
+        },
+      }
+    );
+
+    const response = {
+      status: "Success",
+      results: product,
+    };
+    res.send(response);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
+router.delete("/:id", auth, async (req, res) => {
+  const id = req.params["id"];
+  const product = await Product.deleteOne({ _id: id });
+  res.send(product);
+});
 module.exports = router;

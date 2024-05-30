@@ -36,4 +36,28 @@ hr {
 .card-container > p {
   margin-bottom: 10px;
   width: 80%;
-} 
+}
+.btn > .update-btn {
+  padding: 8px 13px;
+  background-color: rgb(37, 151, 52);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.btn > .update-btn:hover {
+  background-color: rgb(18, 92, 28);
+  cursor: pointer;
+}
+
+.btn > .delete-btn {
+  padding: 8px 13px;
+  background-color: rgb(255, 80, 80);
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+.btn > .delete-btn:hover {
+  background-color: rgb(212, 72, 72);
+  cursor: pointer;
+}

@@ -4,12 +4,16 @@ import "./Home.css";
 import Card from "../components/Card";
 import Search from "../components/Search";
 import Pagination from "../components/Pagination";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function Home() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [pageSize] = useState(90);
+  const [pageSize] = useState(100);
+  const [token] = useState(localStorage.getItem("token"));
+  const navigate = useNavigate();
 
   const search = async (q) => {
     const query = await searchProduct(q);
@@ -17,11 +21,31 @@ function Home() {
   };
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handleInsert = () => {
+    if (!token) {
+      alert("silahkan login terlebih dahulu");
+      navigate("/login");
+    } else {
+      navigate("/input-product");
+    }
+  };
 
   return (
     <>
+      <Navbar />
+
       <Search search={search} />
-      <p>Jumlah Product terhitung : {products.length}</p>
+
+      <div className="bg-atas">
+        <p>Product : {products.length}</p>
+        {!token ? (
+          " "
+        ) : (
+          <button id="atas" className="btn-insert" onClick={handleInsert}>
+            +
+          </button>
+        )}
+      </div>
       <div className="wrapper">
         <Card
           products={products}

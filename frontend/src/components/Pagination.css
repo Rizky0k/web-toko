@@ -1,9 +1,30 @@
-ul {
+html {
+  scroll-behavior: smooth;
+}
+.pagination {
+  margin: 15px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 15px;
+}
+a {
+  font-size: 18px;
+  border: none;
+  background: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  background-color: rgb(77, 109, 158);
+  color: white;
 }
 
-ul li {
-  text-decoration: none;
-  list-style: none;
+a.active {
+  color: white;
+  font-weight: 400;
+  background-color: rgb(39, 104, 202);
+  cursor: default;
 }

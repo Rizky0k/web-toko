@@ -1,0 +1,41 @@
+.input-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 10px;
+}
+h1 {
+  text-align: center;
+  margin: 40px;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field input {
+  margin-top: 5px;
+  padding: 15px 20px;
+}
+.input-field > input::-webkit-outer-spin-button,
+.input-field > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.save-btn:hover {
+  background-color: rgb(221, 221, 221);
+}
+.save-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: bisque;
+  font-size: 16px;
+  padding: 10px 25px;
+}

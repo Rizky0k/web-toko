@@ -4,17 +4,19 @@ import "./Pagination.css";
 // import { getProductListPagination } from "../api";
 // eslint-disable-next-line react/prop-types
 function Pagination({ totalPages, currentPage, paginate }) {
+  let atas = "atas";
   return (
     <>
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, index) => (
-          <button
+          <a
             key={index + 1}
             onClick={() => paginate(index + 1)}
             className={index + 1 === currentPage ? "active" : ""}
+            href={atas ? "#atas" : ""}
           >
             {index + 1}
-          </button>
+          </a>
         ))}
       </div>
     </>
