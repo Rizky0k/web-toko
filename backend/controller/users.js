@@ -22,11 +22,12 @@ router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
-    if (!user) return res.send({ error: "Error User Not Found" });
+    if (!user) return res.send({ error: "Username or Password are invalid" });
 
     const isMatch = await bcrypt.compare(password, user.password);
 
-    if (!isMatch) return res.send({ error: "Invalid Password" });
+    if (!isMatch)
+      return res.send({ error: "Username or Password are invalid" });
     const token = jwt.sign({ username, password }, process.env.SECRET_TOKEN, {
       expiresIn: "1h",
     });
