@@ -17,7 +17,7 @@ const Navbar = () => {
     <>
       <nav>
         {!token ? (
-          <button className="nav-btn" onClick={handleLogIn}>
+          <button className="nav-btn" id="atas" onClick={handleLogIn}>
             Login
           </button>
         ) : (

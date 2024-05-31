@@ -14,7 +14,6 @@ function Login() {
 
     try {
       const data = await loginUser(user);
-      console.log(data);
 
       if (data.error) {
         alert(data.error);

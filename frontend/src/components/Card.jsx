@@ -16,7 +16,7 @@ function Card({ products, setProducts, setTotalPages, currentPage, pageSize }) {
       setTotalPages(result.totalPages);
       setIsLoading(false);
     });
-  }, [setProducts, currentPage, setTotalPages, pageSize, products]);
+  }, [setProducts, currentPage, setTotalPages, pageSize]);
 
   const deleteHandler = async (product) => {
     try {
@@ -66,10 +66,6 @@ function Card({ products, setProducts, setTotalPages, currentPage, pageSize }) {
       ))}
     </>
   );
-  //   return (
-
-  //   );
-  // });
 }
 
 export default Card;

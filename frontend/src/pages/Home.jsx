@@ -41,7 +41,7 @@ function Home() {
         {!token ? (
           " "
         ) : (
-          <button id="atas" className="btn-insert" onClick={handleInsert}>
+          <button className="btn-insert" onClick={handleInsert}>
             +
           </button>
         )}

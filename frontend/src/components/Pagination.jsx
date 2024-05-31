@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
-// import { useEffect } from "react";
-import "./Pagination.css";
-// import { getProductListPagination } from "../api";
 // eslint-disable-next-line react/prop-types
+import "./Pagination.css";
 function Pagination({ totalPages, currentPage, paginate }) {
   let atas = "atas";
   return (
