@@ -1,0 +1,61 @@
+.card-skeleton-container {
+  /* background-color: #c94b4b; */
+  /* border-radius: 10px; */
+  /* border: 1px solid black; */
+  box-shadow: 7px 8px 10px rgb(197, 197, 197);
+  width: 250px;
+  height: auto;
+  padding: 15px 10px;
+  margin: 5px;
+
+  --box-color: rgb(197, 197, 197);
+  --radius-size: 10px;
+}
+
+.card-skeleton-container > .category-skeleton {
+  width: 75px;
+  height: 23px;
+  background-color: var(--box-color);
+  border-radius: var(--radius-size);
+  font-size: small;
+}
+
+.card-skeleton-container > .name-skeleton {
+  font-size: 1.3em;
+  width: 200px;
+  height: 24px;
+  background-color: var(--box-color);
+  border-radius: var(--radius-size);
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.card-skeleton-container > .price-skeleton {
+  width: 90px;
+  height: 24px;
+  border-radius: var(--radius-size);
+  background-color: var(--box-color);
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 1px solid var(--box-color);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-skeleton-container > .notetitle-skeleton {
+  margin-bottom: 10px;
+  width: 50px;
+  height: 20px;
+  background-color: var(--box-color);
+  border-radius: var(--radius-size);
+}
+.card-skeleton-container > .note-skeleton {
+  margin-bottom: 10px;
+  width: 200px;
+  height: 24px;
+  border-radius: var(--radius-size);
+  background-color: var(--box-color);
+}
