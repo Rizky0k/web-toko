@@ -22,12 +22,8 @@ function Card({ products, setProducts, setTotalPages, currentPage, pageSize }) {
     try {
       if (confirm("beneran nih?") == true) {
         await deleteProduct(token, product._id);
-        alert(
-          `data ${product.name} dengan ID ${product._id} akan dihapus mas hehe`
-        );
+        alert(`${product.name} akan dihapus`);
         location.reload();
-      } else {
-        alert("belum dihapus");
       }
     } catch (error) {
       console.log(error);
@@ -36,7 +32,6 @@ function Card({ products, setProducts, setTotalPages, currentPage, pageSize }) {
 
   const updateHandler = (product) => {
     navigate(`/update-product/${product._id}`, { state: { product } });
-    alert(`ini nama cardnya ${product.name}, ini idnya ${product._id}`);
   };
 
   return (

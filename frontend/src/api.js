@@ -1,7 +1,5 @@
 import axios from "axios";
-// const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-// const apiUrl = "http://localhost:3000/product";
-const apiUrl = "http://localhost:3000";
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 export const getProductList = async (currentPage, pageSize) => {
   const product = await axios.get(`${apiUrl}/product`, {

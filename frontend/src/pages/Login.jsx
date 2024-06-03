@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { loginUser } from "../api";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 // eslint-disable-next-line react/prop-types
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loginMessage, setloginMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -16,7 +18,7 @@ function Login() {
       const data = await loginUser(user);
 
       if (data.error) {
-        alert(data.error);
+        setloginMessage(data.error);
       } else {
         localStorage.setItem("token", data.token);
         alert(`Hello ${data.result.name} welcome to your store`);
@@ -33,6 +35,7 @@ function Login() {
       <form className="input-form" onSubmit={handleSubmit}>
         <div className="input-field">
           <label htmlFor="username">Username</label>
+          <small className="error-Msg">{loginMessage}</small>
           <input
             type="text"
             name="username"
@@ -45,6 +48,7 @@ function Login() {
         </div>
         <div className="input-field">
           <label htmlFor="password">Password</label>
+          <small className="error-Msg">{loginMessage}</small>
           <input
             type="password"
             name="password"

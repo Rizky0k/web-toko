@@ -22,7 +22,7 @@ function UpdateProduct() {
     e.preventDefault();
     try {
       await putProduct(token, id, product);
-      alert("Update Sukses data telah dirubah");
+      alert("Update Sukses data telah diubah");
     } catch (error) {
       console.log(error);
     }

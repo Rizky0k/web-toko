@@ -10,6 +10,7 @@
 
   --box-color: rgb(197, 197, 197);
   --radius-size: 10px;
+  --gradient-animation: animation 15s ease infinite;
 }
 
 .card-skeleton-container > .category-skeleton {
